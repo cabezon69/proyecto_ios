@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     },
     button: {
         flex: 1
+        
     },
     buttonPressed: {
         opacity: 0.5
@@ -43,10 +44,12 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
+        
     },
     title: {
         fontWeight: 'bold',
         fontSize: 18,
+        
     }
 })
 

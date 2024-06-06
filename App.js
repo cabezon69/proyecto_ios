@@ -17,13 +17,13 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerStyle: { backgroundColor: '#B2D8D8' },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: '#F0F8FF' }
+            headerStyle: { backgroundColor: '#000000' },
+            headerTintColor: '#CC3737',
+            contentStyle: { backgroundColor: '#CC3737' }
           }}
         >
           <Stack.Screen
-            name="SpaCategories"
+            name="catalogo de autos"
             component={CategoriesScreen}
           />
           <Stack.Screen
@@ -31,7 +31,7 @@ export default function App() {
             component={ServicesOverviewScreen}
             options={{
               title: 'Todas las categorías',
-              headerTintColor: 'white',
+              headerTintColor: '#CC3737',
               contentStyle: { backgroundColor: '#B2D8D8' }
             }}
           />

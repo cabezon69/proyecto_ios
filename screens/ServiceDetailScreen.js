@@ -18,8 +18,7 @@ function ServiceDetailScreen({ route, navigation }) {
             <View>
                 <Text style={styles.subtitle}>Componentes</Text>
                 {selectedService.components.map(component => <Text style={styles.textContent} key={component}>{component}</Text>)}
-                <Text style={styles.subtitle}>Pasos</Text>
-                {selectedService.steps.map(step => <Text style={styles.textContent} key={step}>{step}</Text>)}
+
             </View>
         </ScrollView>
     )
