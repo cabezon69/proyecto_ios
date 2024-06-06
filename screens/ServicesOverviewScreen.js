@@ -1,15 +1,13 @@
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { useLayoutEffect } from 'react'
+import { SERVICES, CATEGORIES } from "../data/dummy_data";
+import ServiceItem from "../components/ServiceItem";
 
-import { MEALS, CATEGORIES } from "../data/dummy_data";
-import MealItem from "../components/MealItem";
-
-function MealsOverviewScreen({ route, navigation }){
+function ServicesOverviewScreen({ route, navigation }) {
     const catId = route.params.categoryId
-    console.log('catId', catId)
 
-    const displayedMeals = MEALS.filter((mealItem) => {
-        return mealItem.categoryIds.indexOf(catId) >= 0
+    const displayedServices = SERVICES.filter((serviceItem) => {
+        return serviceItem.categoryIds.indexOf(catId) >= 0
     })
 
     useLayoutEffect(() => {
@@ -20,12 +18,10 @@ function MealsOverviewScreen({ route, navigation }){
         })
     }, [catId, navigation])
 
-    function renderMealItem(itemData) {
-    
-        return(
-
-            <MealItem
-                id={itemData.item.id} 
+    function renderServiceItem(itemData) {
+        return (
+            <ServiceItem
+                id={itemData.item.id}
                 title={itemData.item.title}
                 imageUrl={itemData.item.imageUrl}
                 affordability={itemData.item.affordability}
@@ -33,22 +29,20 @@ function MealsOverviewScreen({ route, navigation }){
                 duration={itemData.item.duration}
             />
         )
-
     }
 
-    return(
+    return (
         <View style={styles.container}>
-            <Text>Meals Overview - { catId }</Text>
-            <FlatList 
-                data={displayedMeals}
+            <FlatList
+                data={displayedServices}
                 keyExtractor={(item) => item.id}
-                renderItem={renderMealItem}
+                renderItem={renderServiceItem}
             />
         </View>
     )
 }
 
-export default MealsOverviewScreen
+export default ServicesOverviewScreen
 
 const styles = StyleSheet.create({
     container: {

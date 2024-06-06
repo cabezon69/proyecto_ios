@@ -1,4 +1,4 @@
-class Meal {
+class Service {
   constructor(
     id,
     categoryIds,
@@ -7,27 +7,24 @@ class Meal {
     complexity,
     imageUrl,
     duration,
-    ingredients,
+    components,
     steps,
-    isGlutenFree,
-    isVegan,
-    isVegetarian,
-    isLactoseFree
+    includesAccommodation,
+    includesTransport,
+    includesMeals,
+    includesActivities
   ) {
     this.id = id;
     this.categoryIds = categoryIds;
     this.title = title;
     this.imageUrl = imageUrl;
-    this.ingredients = ingredients;
+    this.components = components;
     this.steps = steps;
     this.duration = duration;
     this.complexity = complexity;
     this.affordability = affordability;
-    this.isGlutenFree = isGlutenFree;
-    this.isVegan = isVegan;
-    this.isVegetarian = isVegetarian;
-    this.isLactoseFree = isLactoseFree;
+    
   }
 }
 
-export default Meal;
+export default Service;
